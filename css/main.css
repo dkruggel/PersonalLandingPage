@@ -7,7 +7,11 @@ html
 {
     font-family: 'Varela Round' !important;
     max-width: 100%;
-    background-color: #EFEFEF !important;
+    min-height: 100%;
+    background-size: cover;
+    /* background-color: #EFEFEF !important; */
+    background-image: linear-gradient(to bottom right, rgba(239,239,239,0),
+                                                         rgba(79,79,79,0.75));
 }
 
 .button
@@ -33,6 +37,7 @@ html
     color: #00171F;
     background-color: #00A7E1;
     border-radius: 5px;
+    cursor: grab;
 }
 
 .button:active
@@ -41,4 +46,5 @@ html
     color: #00171F;
     background-color: #007EA7;
     border-radius: 5px;
+    cursor: grabbing;
 }
