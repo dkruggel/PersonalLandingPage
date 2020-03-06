@@ -1,0 +1,14 @@
+body {
+    background-color: #fefefe;
+}
+
+h1 {
+    font-family: 'Varela Round', sans-serif;
+    text-align: center;
+}
+
+button {
+    background-color: transparent;
+    border-color: transparent;
+    
+}
