@@ -14,10 +14,29 @@ html
                                                          rgba(79,79,79,0.75));
 }
 
-.button
+.nav
 {
+    display: flex;
+    /* border: 1px solid black; */
+}
+
+.nav .buttons
+{
+    align-self: center;
+    width: 10%;
+    /* border: 1px solid black; */
+}
+
+.nav .weather
+{
+    /* border: 1px solid black; */
+    width: 10%;
+    align-self: stretch;
+}
+
+.button {
     background-color: #00A7E1;
-    border: none;
+    border: 2px solid #00A7E1;
     color: #00171F;
     margin-right: 10px;
     padding: 10px 24px;
