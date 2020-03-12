@@ -17,20 +17,20 @@ html
 .nav
 {
     display: flex;
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 
 .nav .buttons
 {
     align-self: center;
-    width: 10%;
-    /* border: 1px solid black; */
+    /* width: 15%;
+    border: 1px solid black; */
 }
 
 .nav .weather
 {
-    /* border: 1px solid black; */
-    width: 10%;
+    /* border: 1px solid black;
+    width: 15%; */
     align-self: stretch;
 }
 
