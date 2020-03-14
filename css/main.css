@@ -1,6 +1,11 @@
 *
 {
-    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent
 }
 
 html
@@ -14,10 +19,39 @@ html
                                                          rgba(79,79,79,0.75));
 }
 
+li,ol,ul
+{
+    list-style:none
+}
+
+a
+{
+    color:#4990d1;
+    text-decoration:none
+}
+
+a:hover
+{
+    text-decoration:underline
+}
+
+.center
+{
+    width:100%;
+    max-width:830px;
+    margin:0 auto
+}
+
 .nav
 {
-    display: flex;
+    display:block;
     border: 1px solid black;
+    margin-left: 0px;
+}
+
+.nav > li:last-child
+{
+    float: right;
 }
 
 .nav .buttons
@@ -25,13 +59,6 @@ html
     align-self: center;
     /* width: 15%;
     border: 1px solid black; */
-}
-
-.nav .weather
-{
-    /* border: 1px solid black;
-    width: 15%; */
-    align-self: stretch;
 }
 
 .button {
