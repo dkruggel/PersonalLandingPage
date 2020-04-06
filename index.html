@@ -14,7 +14,7 @@
       <div class="nav_container">
         <ul class="nav_left">
         <li class="buttons">
-          <a class="button">Menu</a>
+          <a class="button" onclick="LoadData()">Menu</a>
         </li>
         <li style="align-self: center;width: 100%;">
           <h1>David Kruggel</h1>
@@ -28,5 +28,41 @@
     
     <!-- <h2 style="text-align: center;">cs student<br>software dev</h2> -->
 
+    <section id="section">
+      <h2 style="text-align: center;" name="data_header">Rainfall</h2>
+    </section>
+
+    
+  <script>
+    const section = document.getElementById('section');
+let requestURL = "../data.json";
+let request = new XMLHttpRequest();
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+
+request.onload = function() {
+    const data = request.response;
+    populateHeader(data);
+    // showHeroes(superHeroes);
+}
+
+function populateHeader(jsonObj) {
+    const dates = jsonObj['data']
+        const list = document.createElement("ul");
+
+    for (let i = 0; i < dates.length; i++) {
+        const listItem = document.createElement('li');
+        listItem.textContent = dates[i]['date'] + ": " + dates[i]['rain_total'] + " in.";
+        list.appendChild(listItem);
+    }
+
+    const h2 = document.getElementsByName("data_header");
+    h2.textContent = dates[7]['date'] + ": " + dates[7]['rain_total'] + " in.";
+
+    section.appendChild(list);
+    section.appendChild(h2);
+}
+  </script>
   </body>
 </html>
