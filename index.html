@@ -29,7 +29,7 @@
     <!-- <h2 style="text-align: center;">cs student<br>software dev</h2> -->
 
     <section id="section">
-      <h2 style="text-align: center;" name="data_header">Rainfall</h2>
+      <h2 style="text-align: left;" name="data_header">Rainfall</h2>
     </section>
 
     
@@ -44,7 +44,6 @@ request.send();
 request.onload = function() {
     const data = request.response;
     populateHeader(data);
-    // showHeroes(superHeroes);
 }
 
 function populateHeader(jsonObj) {
@@ -57,11 +56,7 @@ function populateHeader(jsonObj) {
         list.appendChild(listItem);
     }
 
-    const h2 = document.getElementsByName("data_header");
-    h2.textContent = dates[7]['date'] + ": " + dates[7]['rain_total'] + " in.";
-
     section.appendChild(list);
-    section.appendChild(h2);
 }
   </script>
   </body>
