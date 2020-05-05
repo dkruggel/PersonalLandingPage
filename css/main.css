@@ -21,52 +21,18 @@ html
 
 .nav
 {
-    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
     height: 100px;
 }
 
-.nav_container
+h1
 {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    z-index: 9998;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
     width: 100%;
-    height: 120px;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    -webkit-transition: all 200ms ease;
-    transition: all 200ms ease;
-}
-
-.nav_left
-{
-    position: relative;
-    z-index: 9998;
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    overflow: visible;
-    width: 100%;
-    max-width: 1200px;
-    padding-right: 2px;
-    padding-left: 20px;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
+    text-align: center;
+    border: 2px solid;
 }
 
 li,ol,ul

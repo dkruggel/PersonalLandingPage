@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"data": [{"date": "Mon, Apr 13th 2020", "rain_total": 0.001}, {"date": "Sun, Apr 12th 2020", "rain_total": 0.151}, {"date": "Sat, Apr 11th 2020", "rain_total": 0.001}, {"date": "Fri, Apr 10th 2020", "rain_total": 0.0}, {"date": "Thu, Apr 9th 2020", "rain_total": 0.0}, {"date": "Wed, Apr 8th 2020", "rain_total": 0.001}, {"date": "Tue, Apr 7th 2020", "rain_total": 0.0}, {"date": "Total", "rain_total": 0.154}]}
+=======
+{"data": [{"date": "Fri, May 1st 2020", "rain_total": 0.0}, {"date": "Thu, Apr 30th 2020", "rain_total": 0.0}, {"date": "Wed, Apr 29th 2020", "rain_total": 0.126}, {"date": "Tue, Apr 28th 2020", "rain_total": 0.51}, {"date": "Mon, Apr 27th 2020", "rain_total": 0.002}, {"date": "Sun, Apr 26th 2020", "rain_total": 0.0}, {"date": "Sat, Apr 25th 2020", "rain_total": 0.263}, {"date": "Total", "rain_total": 0.901}]}
+>>>>>>> 81b933804fb66307b5fcb17304195e9bbbf01e99

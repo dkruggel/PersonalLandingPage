@@ -7,57 +7,56 @@
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Varela Round">
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
     <title>David Kruggel</title>
   </head>
   <body>
     <div class="nav">
-      <div class="nav_container">
-        <ul class="nav_left">
-        <li class="buttons">
-          <a class="button" onclick="LoadData()">Menu</a>
-        </li>
-        <li style="align-self: center;width: 100%;">
-          <h1>David Kruggel</h1>
-        </li>
-        <li class="weather">
-          <script type='application/javascript' src='https://darksky.net/widget/default-small/38.8381,-90.7249/us12/en.js?width=100%&height=70&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us'></script>
-        </li>
-      </ul>
+      <a class="button">Menu</a>
+      <h1>David Kruggel</h1>
+      <div>
+        <script type='application/javascript' src='https://darksky.net/widget/default-small/38.8381,-90.7249/us12/en.js?width=100%&height=70&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us'></script>
       </div>
+      </ul>
     </div>
     
     <!-- <h2 style="text-align: center;">cs student<br>software dev</h2> -->
 
-    <section id="section">
-      <h2 style="text-align: left;" name="data_header">Rainfall</h2>
+    <section id="section" style="text-align: center;border: 1px black solid;">
+      <h2 name="data_header">Rainfall</h2>
+      <ul id="list" style="width: 50%;border: 1px black solid;"></ul>
     </section>
 
     
-  <script>
+  <script type="text/javascript">
     const section = document.getElementById('section');
-let requestURL = "../data.json";
-let request = new XMLHttpRequest();
-request.open('GET', requestURL);
-request.responseType = 'json';
-request.send();
+    let requestURL = "../data.json";
+    let request = new XMLHttpRequest();
+    request.open('GET', requestURL);
+    request.responseType = 'json';
+    request.onerror = function () {
+      console.log("** An error has occurred during the transaction");
+    }
+    request.send();
 
-request.onload = function() {
-    const data = request.response;
-    populateHeader(data);
-}
-
-function populateHeader(jsonObj) {
-    const dates = jsonObj['data']
-        const list = document.createElement("ul");
-
-    for (let i = 0; i < dates.length; i++) {
-        const listItem = document.createElement('li');
-        listItem.textContent = dates[i]['date'] + ": " + dates[i]['rain_total'] + " in.";
-        list.appendChild(listItem);
+    request.onload = function() {
+      const data = request.response;
+      populateHeader(data);
     }
 
-    section.appendChild(list);
-}
+    function populateHeader(jsonObj) {
+        const dates = jsonObj['data']
+        var list = document.getElementById("list");
+
+        for (let i = 0; i < dates.length; i++) {
+            const listItem = document.createElement('li');
+            listItem.id = "rain_list";
+            listItem.textContent = dates[i]['date'] + ": " + dates[i]['rain_total'] + " in.";
+            list.appendChild(listItem);
+        }
+
+        section.appendChild(list);
+    }
   </script>
   </body>
 </html>
