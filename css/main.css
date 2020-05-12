@@ -32,12 +32,21 @@ h1
 {
     width: 100%;
     text-align: center;
-    border: 2px solid;
 }
 
 li,ol,ul
 {
     list-style:none
+}
+
+.card {
+  background-color: white;
+  border-radius: 5px;
+  font-family: Verdana;
+  height: 15%;
+  margin: 2% auto;
+  padding: 2% 5%;
+  width: 80%;
 }
 
 a
@@ -90,7 +99,7 @@ a:hover
     color: #00171F;
     background-color: #00A7E1;
     border-radius: 5px;
-    cursor: grab;
+    cursor: pointer;
 }
 
 .button:active

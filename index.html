@@ -8,55 +8,76 @@
           href="https://fonts.googleapis.com/css?family=Varela Round">
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <title>David Kruggel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <title>David Kruggel | Software Developer</title>
   </head>
   <body>
-    <div class="nav">
-      <a class="button">Menu</a>
-      <h1>David Kruggel</h1>
-      <div>
-        <script type='application/javascript' src='https://darksky.net/widget/default-small/38.8381,-90.7249/us12/en.js?width=100%&height=70&title=Full Forecast&textColor=333333&bgColor=transparent&transparency=true&skyColor=undefined&fontFamily=Default&customFont=&units=us'></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">David Kruggel | Software Developer</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
       </div>
-      </ul>
+    </nav>
+
+    <section>
+      <div class="card-deck" style="width: 100%;padding: 2rem">
+        <div class="card text-center text-white bg-dark mb-3" style="min-height: 15rem;">
+          <div class="card-body">
+            <h5 class="card-title">Web Development</h5>
+            <p class="card-text">I like to build responsive web pages and web apps</p>
+            <a href="#" class="card-link">Github</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+        
+        <div class="card text-center text-white bg-dark mb-3" style="min-height: 15rem;">
+          <div class="card-body">
+            <h5 class="card-title">.net Development</h5>
+            <p class="card-text">I enjoy writing native desktop apps in c# using .net core</p>
+            <a href="#" class="card-link">Github</a>
+            <a href="#" class="card-link">Another link</a>
+          </div>
+        </div>
+        
+      <div class="card text-center text-white bg-dark mb-3" style="min-height: 15rem;">
+        <div class="card-body">
+          <h5 class="card-title">Certifications</h5>
+          <p class="card-text">I hold several industry certifications</p>
+          <a href="#" class="card-link">LinkedIn</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
     </div>
-    
-    <!-- <h2 style="text-align: center;">cs student<br>software dev</h2> -->
-
-    <section id="section" style="text-align: center;border: 1px black solid;">
-      <h2 name="data_header">Rainfall</h2>
-      <ul id="list" style="width: 50%;border: 1px black solid;"></ul>
     </section>
-
-    
-  <script type="text/javascript">
-    const section = document.getElementById('section');
-    let requestURL = "../data.json";
-    let request = new XMLHttpRequest();
-    request.open('GET', requestURL);
-    request.responseType = 'json';
-    request.onerror = function () {
-      console.log("** An error has occurred during the transaction");
-    }
-    request.send();
-
-    request.onload = function() {
-      const data = request.response;
-      populateHeader(data);
-    }
-
-    function populateHeader(jsonObj) {
-        const dates = jsonObj['data']
-        var list = document.getElementById("list");
-
-        for (let i = 0; i < dates.length; i++) {
-            const listItem = document.createElement('li');
-            listItem.id = "rain_list";
-            listItem.textContent = dates[i]['date'] + ": " + dates[i]['rain_total'] + " in.";
-            list.appendChild(listItem);
-        }
-
-        section.appendChild(list);
-    }
-  </script>
   </body>
 </html>
