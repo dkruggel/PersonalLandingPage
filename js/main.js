@@ -1,6 +1,3 @@
-import { login } from './login';
-
-// OpenWeather Info
 const openWeatherKey = '6102a812da477a662eca40c6b33cf325';
 const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
@@ -37,12 +34,6 @@ const createWeatherHTML = (currentDay) => {
             <h4 id="weather-data">Real Feel: ${kelvinToFahrenheit(currentDay.main.feels_like)}&deg;F</h4>`;
 }
 
-function auth() {
-    login();
-}
-
 const kelvinToFahrenheit = k => ((k - 273.15) * 9 / 5 + 32).toFixed(0);
 
 document.onload = getForecast().then(forecast => renderForecast(forecast));
-
-document.getElementById('login').onclick(auth());
